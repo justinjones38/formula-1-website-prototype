@@ -1,5 +1,7 @@
 import styles from "./SecondaryHeroCard.module.css";
 import { convertDate } from "../../utils/helper";
+import LinkButton from "../buttons/LinkButton";
+import Calendar from "../../pages/Calendar";
 
 export default function UpcomingSchedule(props) {
   return (
@@ -18,6 +20,9 @@ export default function UpcomingSchedule(props) {
           </div>
         </div>
       ))}
+      <div className={styles.btnContainer}>
+        <LinkButton to="calendar" element={<Calendar />}>View Schedule</LinkButton>
+      </div>
     </div>
   );
 }

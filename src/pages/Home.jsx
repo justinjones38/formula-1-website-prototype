@@ -1,19 +1,24 @@
 import styles from "./Home.module.css";
-import NextRaceCard from "../Cards/NextRaceCard.jsx";
-import LastRaceCard from "../Cards/LastRaceCard.jsx";
-import UpcomingSchedule from "../Cards/UpcomingSchedule.jsx";
-import DriverStandings from "../Tables/DriverStandings.jsx";
-import ConstructorStandings from "../Tables/ConstructorStandings.jsx";
+import { useOutletContext } from "react-router-dom";
+
+import NextRaceCard from "../components/cards/NextRaceCard.jsx";
+import LastRaceCard from "../components/cards/LastRaceCard.jsx";
+import UpcomingSchedule from "../components/cards/UpcomingSchedule.jsx";
+import DriverStandings from "../components/tables/DriverStandings.jsx";
+import ConstructorStandings from "../components/tables/ConstructorStandings.jsx";
 
 import { useState } from "react";
 
-export default function HeroSection({
-  calendar,
-  driverStandings,
-  constructorStandings,
-  results,
-}) {
+export default function Home() {
   const [driverStandingsState, setDriverStandingsState] = useState(true);
+
+  const { data } = useOutletContext();
+  const { calendar, driverStandings, constructorStandings, results } = data;
+
+  // Temporary check to prevent error.
+  if (!data || Object.keys(data).length === 0) {
+    return;
+  }
 
   // Get current round of schedule by checking how many races have results for them
   const eventRoundCompleted = results.Races.length;

@@ -1,5 +1,7 @@
 import styles from "./Navbar.module.css";
 import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import useWindowWidth from "../../hooks/useWindowWidth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -10,40 +12,17 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 
 library.add(fas, far, fab);
 
-export default function Navbar({ windowWidth }) {
+export default function Navbar() {
   // Setting state to track whether hamburger menu is open or closed
   const [hamburgerButton, setHamburgerButton] = useState(false);
-
-  // Array of navItems
-  const navItems = [
-    {
-      id: 0,
-      name: "Schedule",
-      link: "#schedule",
-    },
-    {
-      id: 1,
-      name: "Results",
-      link: "#results",
-    },
-    {
-      id: 2,
-      name: "Standings",
-      link: "#standings",
-    },
-    {
-      id: 3,
-      name: "Drivers",
-      link: "#drivers",
-    },
-  ];
+  const { windowWidth } = useWindowWidth();
 
   return (
     <nav className={styles.navbar}>
       <h1 className={styles.navTitle}>
-        <a href="#home" className={styles.navTitleLink}>
+        <Link to="." className={styles.navTitleLink}>
           F1 Pit Wall
-        </a>
+        </Link>
       </h1>
       <button
         className={styles.hamburgerMenu}
@@ -66,13 +45,42 @@ export default function Navbar({ windowWidth }) {
           <FontAwesomeIcon icon="fa-solid fa-x" />
         </button>
         <ul className={styles.navItems}>
-          {navItems.map((navItem) => (
-            <li className={styles.navItem} key={navItem.id}>
-              <a href={navItem.link} className={styles.navLink}>
-                {navItem.name}
-              </a>
-            </li>
-          ))}
+          <li className={styles.navItem}>
+            <NavLink
+              to="calendar"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles["navLink"]} ${styles["navLinkActive"]}`
+                  : `${styles["navLink"]}`
+              }
+            >
+              Calendar
+            </NavLink>
+          </li>
+          <li className={styles.navItem}>
+            <NavLink
+              to="standings"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles["navLink"]} ${styles["navLinkActive"]}`
+                  : `${styles["navLink"]}`
+              }
+            >
+              Standings
+            </NavLink>
+          </li>
+          <li className={styles.navItem}>
+            <NavLink
+              to="drivers"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles["navLink"]} ${styles["navLinkActive"]}`
+                  : `${styles["navLink"]}`
+              }
+            >
+              Drivers
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>

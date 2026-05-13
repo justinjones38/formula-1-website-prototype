@@ -1,10 +1,17 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import styles from "./Standings.module.css";
-import DriverStandings from "../Tables/DriverStandings";
-import ConstructorStandings from "../Tables/ConstructorStandings";
+import DriverStandings from "../components/tables/DriverStandings";
+import ConstructorStandings from "../components/tables/ConstructorStandings";
 
-export default function Standings(props) {
+export default function Standings() {
   const [isDriverStandings, setIsDriverStandings] = useState(true);
+  const { data } = useOutletContext();
+  if (!data || Object.keys(data).length === 0) {
+    return;
+  }
+  const { driverStandings, constructorStandings } = data;
+  console.log(driverStandings.StandingsLists[0].DriverStandings);
   return (
     <div className={styles.standings}>
       <h2 className={styles.title}>Standings</h2>
@@ -26,13 +33,13 @@ export default function Standings(props) {
       </div>
       {isDriverStandings ? (
         <DriverStandings
-          drivers={props.driverStandings.StandingsLists[0].DriverStandings}
+          drivers={driverStandings.StandingsLists[0].DriverStandings}
           isFiltered={false}
         />
       ) : (
         <ConstructorStandings
           constructors={
-            props.constructorStandings.StandingsLists[0].ConstructorStandings
+            constructorStandings.StandingsLists[0].ConstructorStandings
           }
           isFiltered={false}
         />

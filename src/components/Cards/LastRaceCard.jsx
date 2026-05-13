@@ -1,4 +1,4 @@
-import RaceResults from "../Tables/Results";
+import RaceResults from "../tables/Results";
 import styles from "./SecondaryHeroCard.module.css";
 
 export default function LastRaceCard(props) {
