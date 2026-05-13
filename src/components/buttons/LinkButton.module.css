@@ -1,0 +1,10 @@
+.linkButton {
+  background-color: var(--button-nav-bg-color);
+  color: var(--button-nav-text-color);
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+}
+
+.linkButton:hover, .linkButton:focus {
+  text-decoration: underline;
+}

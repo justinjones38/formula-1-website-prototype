@@ -2,7 +2,7 @@ import styles from "./NextRaceCard.module.css";
 import SessionCard from "./SessionCard";
 import { convertDate, convertTime } from "../../utils/helper";
 
-export default function NextRaceCard({ event, windowWidth }) {
+export default function NextRaceCard({ event }) {
   const today = new Date().getTime();
 
   // Function to get days between section

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import styles from "./Standings.module.css";
-import DriverStandings from "../components/Tables/DriverStandings";
-import ConstructorStandings from "../components/Tables/ConstructorStandings";
+import DriverStandings from "../components/tables/DriverStandings";
+import ConstructorStandings from "../components/tables/ConstructorStandings";
 
 export default function Standings() {
   const [isDriverStandings, setIsDriverStandings] = useState(true);
