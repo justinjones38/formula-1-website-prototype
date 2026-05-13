@@ -1,15 +1,22 @@
+import { useOutletContext } from "react-router-dom";
 import styles from "./Drivers.module.css";
 
 export default function Drivers(props) {
-  const drivers = props.drivers.Drivers.filter(
+  const { data } = useOutletContext();
+  if (!data || Object.keys(data).length === 0) {
+    return;
+  }
+
+  const { drivers, driverStandings } = data;
+  console.log(drivers);
+  const filteredDrivers = drivers.Drivers.filter(
     (driver) => driver.permanentNumber,
   );
 
   // Used to get access to constructor of each driver
-  const driverStandings =
-    props.driverStandings.StandingsLists[0].DriverStandings;
-  const driversInfo = drivers.map((driver) => {
-    const findDriverInfo = driverStandings.find(
+  const fullDriverStandings = driverStandings.StandingsLists[0].DriverStandings;
+  const driversInfo = filteredDrivers.map((driver) => {
+    const findDriverInfo = fullDriverStandings.find(
       (item) => item.Driver.permanentNumber === driver.permanentNumber,
     );
     return {
@@ -20,7 +27,7 @@ export default function Drivers(props) {
 
   return (
     <div className={styles.driverContainer}>
-      <h2 className={styles.title}>Drivers - {props.drivers.season} Season</h2>
+      <h2 className={styles.title}>Drivers - {drivers.season} Season</h2>
       <div className={styles.cards}>
         {driversInfo.map((driver) => (
           <div className={styles.driverCard} key={driver.permanentNumber}>

@@ -74,7 +74,8 @@ NAVBAR
 }
 
 .navLink:hover,
-.navLink:focus {
+.navLink:focus,
+.navLinkActive {
   border-bottom: 4px solid white;
 }
 
