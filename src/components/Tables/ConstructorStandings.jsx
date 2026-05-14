@@ -1,8 +1,6 @@
 import styles from "./Standings.module.css";
 
 export default function ConstructorStandings({ constructors, isFiltered }) {
-  console.log(constructors);
-
   return (
     <div className={styles.container}>
       <table className={styles.table}>

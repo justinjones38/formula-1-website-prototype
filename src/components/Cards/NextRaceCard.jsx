@@ -1,8 +1,9 @@
 import styles from "./NextRaceCard.module.css";
-import SessionCard from "./SessionCard";
 import { convertDate, convertTime } from "../../utils/helper";
+import ScheduleCard from "./ScheduleCard";
 
 export default function NextRaceCard({ event }) {
+  console.log(event);
   const today = new Date().getTime();
 
   // Function to get days between section
@@ -30,36 +31,7 @@ export default function NextRaceCard({ event }) {
           </p>
         </div>
       </div>
-      <div className={styles.cardSessionTimes}>
-        <h3 className={styles.cardSessionTimesHeader}>Weekend Schedule</h3>
-        <SessionCard
-          title="Free Practice 1"
-          info={event.FirstPractice}
-          isPrimary={false}
-        />
-        <SessionCard
-          title="Free Practice 2"
-          info={event.SecondPractice}
-          isPrimary={false}
-        />
-        <SessionCard
-          title="Sprint Qualifying"
-          info={event.SprintQualifying}
-          isPrimary={false}
-        />
-        <SessionCard
-          title="Free Practice 3"
-          info={event.ThirdPractice}
-          isPrimary={false}
-        />
-        <SessionCard title="Sprint" info={event.Sprint} isPrimary={false} />
-        <SessionCard
-          title="Qualifying"
-          info={event.Qualifying}
-          isPrimary={true}
-        />
-        <SessionCard title="Race" info={event} isPrimary={true} />
-      </div>
+      <ScheduleCard event={event} />
     </div>
   );
 }
