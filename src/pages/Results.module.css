@@ -3,3 +3,53 @@
   margin: 0 auto;
   max-width: 1000px;
 }
+
+.title {
+  margin-bottom: 0.6em;
+}
+
+.raceTable {
+  border-collapse: collapse;
+}
+
+ .raceRow {
+  border-bottom: var(--bottom-border);
+}
+
+.raceRow > * {
+  padding: 0.5em;
+}
+
+th.round {
+  text-align: center;
+  width: 8%;
+}
+
+td.round {
+  text-align: center;
+}
+
+.race, .winner, .constructor {
+  text-align: center;
+}
+
+.race {
+  width: 22%;
+}
+
+.winner {
+  width: 18%;
+}
+
+.constructor {
+  width: 18%;
+}
+
+.link {
+  width: 20%;
+}
+
+.linkItem > a {
+  display: block;
+  text-align: center;
+}

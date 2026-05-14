@@ -1,9 +1,21 @@
 .linkButton {
   background-color: var(--button-nav-bg-color);
   color: var(--button-nav-text-color);
-  padding: 0.75em 1.5em;
   border-radius: 8px;
 }
+
+.sm {
+  padding: 0.25em 0.5em
+}
+
+.md {
+  padding: 0.5em 0.85em
+}
+
+.lg {
+  padding: 0.75em 1.5em
+}
+
 
 .linkButton:hover,
 .linkButton:focus {
