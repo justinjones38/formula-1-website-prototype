@@ -1,6 +1,7 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 0.5em;
 }
 
 .table th,
@@ -10,10 +11,6 @@
 
 .tableBodyRow {
   border-bottom: var(--bottom-border);
-}
-
-.tableBodyRow:last-child {
-  border: none;
 }
 
 th.posCol,
@@ -41,5 +38,11 @@ th.driverCol,
 
 th.gapCol,
 .gapCol {
-  text-align: right;
+  text-align: center;
+}
+
+th.pointsCol,
+.pointsCol {
+  text-align: center;
+  vertical-align: text-top;
 }

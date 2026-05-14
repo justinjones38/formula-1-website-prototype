@@ -35,11 +35,6 @@
   border-bottom: var(--bottom-border);
 }
 
-.cardMiniContainer:last-child {
-  margin-bottom: 0;
-  border-bottom: none;
-}
-
 .cardUpcomingRound {
   line-height: 1.2;
   margin: 0;

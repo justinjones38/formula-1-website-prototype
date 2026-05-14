@@ -12,7 +12,7 @@
   border-collapse: collapse;
 }
 
- .raceRow {
+.raceRow {
   border-bottom: var(--bottom-border);
 }
 
@@ -29,7 +29,9 @@ td.round {
   text-align: center;
 }
 
-.race, .winner, .constructor {
+.race,
+.winner,
+.constructor {
   text-align: center;
 }
 

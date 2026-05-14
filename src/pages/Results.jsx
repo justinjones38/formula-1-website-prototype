@@ -5,13 +5,11 @@ import LinkButton from "../components/buttons/LinkButton";
 
 export default function Results() {
   const { data } = useOutletContext();
-  const {windowWidth} = useWindowWidth();
+  const { windowWidth } = useWindowWidth();
   if (!data || Object.keys(data).length === 0) {
     return;
   }
   const { results } = data;
-
-  console.log(results.Races);
 
   return (
     <div className={styles.container}>
@@ -22,7 +20,9 @@ export default function Results() {
             <th className={styles.round}>Round</th>
             <th className={styles.race}>Race </th>
             <th className={styles.winner}>Winner</th>
-            {windowWidth > 700 ? <th className={styles.constructor}>Constructor</th> : null}
+            {windowWidth > 700 ? (
+              <th className={styles.constructor}>Constructor</th>
+            ) : null}
             <th className={styles.link}>Results</th>
           </tr>
         </thead>
@@ -35,9 +35,19 @@ export default function Results() {
                 {race.Results[0].Driver.givenName}{" "}
                 {race.Results[0].Driver.familyName}
               </td>
-              {windowWidth > 700 ? <td className={styles.constructor}>{race.Results[0].Constructor.name}</td> : null}
+              {windowWidth > 700 ? (
+                <td className={styles.constructor}>
+                  {race.Results[0].Constructor.name}
+                </td>
+              ) : null}
               <td className={styles.linkItem}>
-                <LinkButton to="#" className={styles.linkButton} size="sm">View Results</LinkButton>
+                <LinkButton
+                  to={`/${race.Circuit.circuitId}`}
+                  className={styles.linkButton}
+                  size="sm"
+                >
+                  View Results
+                </LinkButton>
               </td>
             </tr>
           ))}

@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
 import Standings from "./pages/Standings";
 import Drivers from "./pages/Drivers";
+import Race from "./pages/Race";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Results from "./pages/Results";
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="results" element={<Results />} />
           <Route path="standings" element={<Standings />} />
           <Route path="drivers" element={<Drivers />} />
+          <Route path=":id" element={<Race />} />
         </Route>
       </Routes>
     </BrowserRouter>

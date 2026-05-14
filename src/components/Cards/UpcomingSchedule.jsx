@@ -21,7 +21,7 @@ export default function UpcomingSchedule(props) {
         </div>
       ))}
       <div className={styles.btnContainer}>
-        <LinkButton to="calendar" element={<Calendar />}>
+        <LinkButton to="calendar" size="md">
           View Schedule
         </LinkButton>
       </div>
