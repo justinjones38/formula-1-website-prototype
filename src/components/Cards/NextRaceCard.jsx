@@ -3,8 +3,9 @@ import { convertDate, convertTime } from "../../utils/helper";
 import ScheduleCard from "./ScheduleCard";
 
 export default function NextRaceCard({ event }) {
-  console.log(event);
-  const today = new Date().getTime();
+  // Gets value of today's date
+  const today = new Date().setHours(0, 0, 0, 0);
+
 
   // Function to get days between section
   const getTimeDifference = (date) => {
@@ -12,7 +13,7 @@ export default function NextRaceCard({ event }) {
     return Math.ceil((raceDate - today) / 1000 / 3600 / 24);
   };
 
-  const timeRemaining = getTimeDifference(event.date, event.time);
+  const timeRemaining = getTimeDifference(event.date);
 
   return (
     <div className={styles.cardContainer}>
