@@ -1,6 +1,6 @@
 import { convertDate } from "../utils/helper";
 import styles from "./Calendar.module.css";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext,Link } from "react-router-dom";
 
 export default function Calendar() {
   const { data } = useOutletContext();
@@ -34,6 +34,8 @@ export default function Calendar() {
     }
   });
 
+  console.log(mappedCalendar);
+
   return (
     <div className={styles.calendarContainer}>
       <h2 className={styles.title}>Race Calendar </h2>
@@ -59,9 +61,9 @@ export default function Calendar() {
               )}
             </div>
             <div className={styles.cardRight}>
-              <p className={`${styles.progressInfo} ${styles[event.styling]}`}>
+              <Link to={`${event.Circuit.circuitId}`} className={`${styles.progressInfo} ${styles[event.styling]}`}>
                 {event.progress}
-              </p>
+              </Link>
               {event.completed ? (
                 <p className={styles.date}>
                   {convertDate(event.date, event.time)}
