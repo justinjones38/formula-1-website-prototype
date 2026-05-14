@@ -2,7 +2,6 @@ import useWindowWidth from "../../hooks/useWindowWidth";
 import styles from "./SessionResults.module.css";
 
 export default function RaceResults({ results }) {
-  console.log(results);
   const { windowWidth } = useWindowWidth();
   const getGap = (driver) => {
     if (driver.status === "Finished") {

@@ -3,11 +3,11 @@ import { convertDate } from "../../utils/helper";
 import LinkButton from "../buttons/LinkButton";
 import Calendar from "../../pages/Calendar";
 
-export default function UpcomingSchedule(props) {
+export default function UpcomingSchedule({upcomingSchedule}) {
   return (
     <div className={`${styles.cardContainer} ${styles.cardContainerUpcoming}`}>
       <p className={styles.cardUpcomingInfo}>Upcoming Schedule</p>
-      {props.upcomingSchedule.map((event) => (
+      {upcomingSchedule.map((event) => (
         <div className={styles.cardMiniContainer} key={event.round}>
           <div className={styles.cardUpcomingLeftSide}>
             <h4 className={styles.cardUpcomingTitle}>{event.raceName}</h4>
