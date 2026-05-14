@@ -5,6 +5,7 @@
   border-radius: 8px;
 }
 
-.linkButton:hover, .linkButton:focus {
+.linkButton:hover,
+.linkButton:focus {
   text-decoration: underline;
 }

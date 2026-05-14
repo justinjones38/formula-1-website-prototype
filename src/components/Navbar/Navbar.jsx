@@ -59,6 +59,18 @@ export default function Navbar() {
           </li>
           <li className={styles.navItem}>
             <NavLink
+              to="results"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles["navLink"]} ${styles["navLinkActive"]}`
+                  : `${styles["navLink"]}`
+              }
+            >
+              Results
+            </NavLink>
+          </li>
+          <li className={styles.navItem}>
+            <NavLink
               to="standings"
               className={({ isActive }) =>
                 isActive

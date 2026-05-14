@@ -51,13 +51,12 @@ export default function Calendar() {
                 <p className={styles.date}>
                   {convertDate(event.date, event.time)}
                 </p>
-              ) : null}
-              {event.completed ? (
+              ) : (
                 <p className={styles.driverInfo}>
                   {results.Races[index].Results[0].Driver.givenName}{" "}
                   {results.Races[index].Results[0].Driver.familyName}
                 </p>
-              ) : null}
+              )}
             </div>
             <div className={styles.cardRight}>
               <p className={`${styles.progressInfo} ${styles[event.styling]}`}>
