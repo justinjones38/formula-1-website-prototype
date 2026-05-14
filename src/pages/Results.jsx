@@ -13,7 +13,7 @@ export default function Results() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Results</h2>
+      <h1 className={styles.title}>Results</h1>
       <table className={styles.raceTable}>
         <thead>
           <tr className={styles.headerRow}>

@@ -38,7 +38,7 @@ export default function Calendar() {
 
   return (
     <div className={styles.calendarContainer}>
-      <h2 className={styles.title}>Race Calendar </h2>
+      <h1 className={styles.title}>Race Calendar </h1>
       <div className={styles.cards}>
         {mappedCalendar.map((event, index) => (
           <div

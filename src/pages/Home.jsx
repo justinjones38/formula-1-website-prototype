@@ -54,10 +54,10 @@ export default function Home() {
 
   return (
     <section className={styles.homeSection}>
-      <h3 className={styles.homeTitle}>
+      <h1 className={styles.homeTitle}>
         {calendar.season} Season - Round {findNextEvent.round} of{" "}
         {calendar.Races.length}
-      </h3>
+      </h1>
 
       {findNextEvent ? <NextRaceCard event={findNextEvent} /> : null}
 
