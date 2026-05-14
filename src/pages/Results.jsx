@@ -42,7 +42,7 @@ export default function Results() {
               ) : null}
               <td className={styles.linkItem}>
                 <LinkButton
-                  to={`/${race.Circuit.circuitId}`}
+                  to={`/results/${race.Circuit.circuitId}`}
                   className={styles.linkButton}
                   size="sm"
                 >

@@ -19,7 +19,7 @@ export default function App() {
           <Route path="results" element={<Results />} />
           <Route path="standings" element={<Standings />} />
           <Route path="drivers" element={<Drivers />} />
-          <Route path=":id" element={<Race />} />
+          <Route path="results/:id" element={<Race />} />
         </Route>
       </Routes>
     </BrowserRouter>

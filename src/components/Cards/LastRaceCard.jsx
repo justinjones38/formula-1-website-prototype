@@ -13,7 +13,7 @@ export default function LastRaceCard({ event }) {
       </h4>
       <SessionResults results={podiumResults} />
       <div className={styles.btnContainer}>
-        <LinkButton size="md" to={event.Circuit.circuitId}>
+        <LinkButton size="md" to={`results/${event.Circuit.circuitId}`}>
           Full Race Results
         </LinkButton>
       </div>
