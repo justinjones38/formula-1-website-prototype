@@ -5,7 +5,6 @@ export default function SessionCard({ info, isPrimary, title }) {
   if (!info || Object.keys(info).length === 0) {
     return;
   }
-  console.log(info, isPrimary, title);
 
   const dayOfWeek = getDayOfWeek(info.date, info.time);
 

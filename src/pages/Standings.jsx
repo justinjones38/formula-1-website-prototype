@@ -14,7 +14,7 @@ export default function Standings() {
   console.log(driverStandings.StandingsLists[0].DriverStandings);
   return (
     <div className={styles.standings}>
-      <h2 className={styles.title}>Standings</h2>
+      <h1 className={styles.title}>Standings</h1>
       <div className={styles.buttonContainer}>
         <button
           className={styles.button}

@@ -27,7 +27,7 @@ export default function Drivers(props) {
 
   return (
     <div className={styles.driverContainer}>
-      <h2 className={styles.title}>Drivers - {drivers.season} Season</h2>
+      <h1 className={styles.title}>Drivers - {drivers.season} Season</h1>
       <div className={styles.cards}>
         {driversInfo.map((driver) => (
           <div className={styles.driverCard} key={driver.permanentNumber}>

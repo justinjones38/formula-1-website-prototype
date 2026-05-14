@@ -15,9 +15,9 @@ export default function Race() {
   console.log(race);
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>
+      <h1 className={styles.title}>
         Round {race.round} - {race.raceName}
-      </h2>
+      </h1>
       <SessionResults results={race.Results} />
     </div>
   );
