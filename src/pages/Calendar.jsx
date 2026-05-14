@@ -1,6 +1,6 @@
 import { convertDate } from "../utils/helper";
 import styles from "./Calendar.module.css";
-import { useOutletContext,Link } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 
 export default function Calendar() {
   const { data } = useOutletContext();
@@ -61,7 +61,10 @@ export default function Calendar() {
               )}
             </div>
             <div className={styles.cardRight}>
-              <Link to={`${event.Circuit.circuitId}`} className={`${styles.progressInfo} ${styles[event.styling]}`}>
+              <Link
+                to={`${event.Circuit.circuitId}`}
+                className={`${styles.progressInfo} ${styles[event.styling]}`}
+              >
                 {event.progress}
               </Link>
               {event.completed ? (

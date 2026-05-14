@@ -1,7 +1,7 @@
-import styles from "./Schedule.module.css"
+import styles from "./Schedule.module.css";
 import SessionCard from "./SessionCard";
 
-export default function ScheduleCard({event}) {
+export default function ScheduleCard({ event }) {
   return (
     <div className={styles.cardSessionTimes}>
       <h3 className={styles.cardSessionTimesHeader}>Weekend Schedule</h3>

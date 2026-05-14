@@ -11,13 +11,15 @@ export default function RaceCalendar() {
   }
 
   const { calendar } = data;
-  
-  const event = calendar.Races.find(event => event.Circuit.circuitId === id);
+
+  const event = calendar.Races.find((event) => event.Circuit.circuitId === id);
   console.log(event);
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Round {event.round} - {event.raceName}</h1>
+      <h1 className={styles.title}>
+        Round {event.round} - {event.raceName}
+      </h1>
       <ScheduleCard event={event} />
     </div>
   );

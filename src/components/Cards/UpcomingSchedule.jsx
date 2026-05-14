@@ -3,7 +3,7 @@ import { convertDate } from "../../utils/helper";
 import LinkButton from "../buttons/LinkButton";
 import Calendar from "../../pages/Calendar";
 
-export default function UpcomingSchedule({upcomingSchedule}) {
+export default function UpcomingSchedule({ upcomingSchedule }) {
   return (
     <div className={`${styles.cardContainer} ${styles.cardContainerUpcoming}`}>
       <p className={styles.cardUpcomingInfo}>Upcoming Schedule</p>
