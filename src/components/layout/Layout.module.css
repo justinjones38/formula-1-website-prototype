@@ -1,4 +1,7 @@
 .layoutContainer {
   padding-top: 3.5em;
-  margin-bottom: 1em;
+  padding-bottom: 1em;
+  width: 98%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
