@@ -20,10 +20,7 @@ export default function useFetch() {
           ),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/drivers/?format=json`),
           fetch(
-            `https://api.jolpi.ca/ergast/f1/${year}/constructors/?format=json`,
-          ),
-          fetch(
-            `https://api.jolpi.ca/ergast/f1/${year}/results/?format=json&limit=1000`,
+            `https://api.jolpi.ca/ergast/f1/${year}/results/1/?format=json&limit=1000`,
           ),
         ]);
         console.log("run");
@@ -46,7 +43,6 @@ export default function useFetch() {
           driverStandings,
           constructorStandings,
           drivers,
-          constructors,
           results,
         ] = fetchingData;
 
@@ -55,7 +51,6 @@ export default function useFetch() {
           driverStandings: driverStandings.MRData.StandingsTable,
           constructorStandings: constructorStandings.MRData.StandingsTable,
           drivers: drivers.MRData.DriverTable,
-          constructors: constructors.MRData.ConstructorTable,
           results: results.MRData.RaceTable,
         });
       } catch (error) {
