@@ -1,0 +1,48 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5em;
+}
+
+.table th,
+.table td {
+  padding: 0.25em;
+}
+
+.tableBodyRow {
+  border-bottom: var(--bottom-border);
+}
+
+th.posCol,
+.posCol {
+  text-align: center;
+}
+
+.posCol,
+.gapCol {
+  vertical-align: text-top;
+}
+
+th.driverCol,
+.driverCol {
+  text-align: left;
+}
+
+.driverInfo {
+  line-height: 1.6;
+}
+
+.teamInfo {
+  color: var(--faded-text-color);
+}
+
+th.gapCol,
+.gapCol {
+  text-align: center;
+}
+
+th.pointsCol,
+.pointsCol {
+  text-align: center;
+  vertical-align: text-top;
+}

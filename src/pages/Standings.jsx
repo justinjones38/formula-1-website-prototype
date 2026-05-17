@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import styles from "./Standings.module.css";
 import DriverStandings from "../components/tables/DriverStandings";
 import ConstructorStandings from "../components/tables/ConstructorStandings";
+import NavButton from "../components/buttons/NavButton";
 
 export default function Standings() {
   const [isDriverStandings, setIsDriverStandings] = useState(true);
@@ -16,20 +17,18 @@ export default function Standings() {
     <div className={styles.standings}>
       <h1 className={styles.title}>Standings</h1>
       <div className={styles.buttonContainer}>
-        <button
-          className={styles.button}
+        <NavButton
           onClick={() => setIsDriverStandings(true)}
           disabled={isDriverStandings}
         >
           Drivers
-        </button>
-        <button
-          className={styles.button}
+        </NavButton>
+        <NavButton
           onClick={() => setIsDriverStandings(false)}
           disabled={!isDriverStandings}
         >
           Constructors
-        </button>
+        </NavButton>
       </div>
       {isDriverStandings ? (
         <DriverStandings

@@ -1,0 +1,14 @@
+.button {
+  font-size: 1.1rem;
+  padding: 0.25em 1em;
+  transition: 0.3s color;
+}
+
+.button:hover {
+  color: var(--button-nav-color);
+}
+
+.button:disabled {
+  color: var(--button-nav-color);
+  border-bottom: 2px solid var(--button-nav-color);
+}
