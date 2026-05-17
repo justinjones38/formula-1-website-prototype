@@ -6,7 +6,6 @@ export default function NextRaceCard({ event }) {
   // Gets value of today's date
   const today = new Date().setHours(0, 0, 0, 0);
 
-
   // Function to get days between section
   const getTimeDifference = (date) => {
     const raceDate = new Date(`${date}`).getTime();

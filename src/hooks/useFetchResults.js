@@ -11,7 +11,9 @@ export default function useFetchResults(circuitId) {
     const fetchData = async (circuitId) => {
       try {
         const dataRes = await Promise.all([
-          fetch(`https://api.jolpi.ca/ergast/f1/${year}/circuits/${circuitId}/results/?format=json`),
+          fetch(
+            `https://api.jolpi.ca/ergast/f1/${year}/circuits/${circuitId}/results/?format=json`,
+          ),
           fetch(
             `https://api.jolpi.ca/ergast/f1/${year}/circuits/${circuitId}/sprint/?format=json`,
           ),
@@ -33,11 +35,7 @@ export default function useFetchResults(circuitId) {
         console.log(fetchingData);
 
         //  Getting the values from the fetchingData Array
-        const [
-          race,
-          sprint,
-          qualifying,
-        ] = fetchingData;
+        const [race, sprint, qualifying] = fetchingData;
 
         setResultsData({
           race: race.MRData.RaceTable,

@@ -4,12 +4,14 @@ import SessionResults from "../tables/SessionResults";
 import styles from "./SecondaryHeroCard.module.css";
 
 export default function LastRaceCard({ event }) {
-  const {resultsData} = useFetchResults(event.Circuit.circuitId);
-  if(!resultsData || Object.keys(resultsData).length === 0) {
+  const { resultsData } = useFetchResults(event.Circuit.circuitId);
+  if (!resultsData || Object.keys(resultsData).length === 0) {
     return;
   }
-  const podiumResults = resultsData.race.Races[0].Results.filter((item, index) => index < 3);
-  console.log(resultsData)
+  const podiumResults = resultsData.race.Races[0].Results.filter(
+    (item, index) => index < 3,
+  );
+  console.log(resultsData);
   return (
     <div className={styles.cardContainer}>
       <p className={styles.cardInfo}>Previous Race Result</p>

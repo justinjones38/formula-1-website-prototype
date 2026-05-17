@@ -13,12 +13,12 @@ export default function QualifyingResults({ results }) {
             Pos
           </th>
           <th className={styles.driverCol}>Driver</th>
-          {windowWidth >= 450 ? 
-          <>
-          <th className={styles.gapCol}>Q1</th>
-          <th className={styles.gapCOl}>Q2</th>          
-          </> : null
-        }
+          {windowWidth >= 450 ? (
+            <>
+              <th className={styles.gapCol}>Q1</th>
+              <th className={styles.gapCOl}>Q2</th>
+            </>
+          ) : null}
 
           <th className={styles.gapCOl}>Q3</th>
         </tr>
@@ -33,12 +33,12 @@ export default function QualifyingResults({ results }) {
               </p>
               <p className={styles.teamInfo}>{driver.Constructor.name}</p>
             </td>
-            {windowWidth >= 450 ?
-            <>
-            <td className={styles.gapCol}>{driver.Q1}</td>
-            <td className={styles.gapCol}>{driver.Q2}</td> 
-            </> : null
-          }
+            {windowWidth >= 450 ? (
+              <>
+                <td className={styles.gapCol}>{driver.Q1}</td>
+                <td className={styles.gapCol}>{driver.Q2}</td>
+              </>
+            ) : null}
 
             <td className={styles.gapCol}>{driver.Q3}</td>
           </tr>
