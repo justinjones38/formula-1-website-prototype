@@ -4,8 +4,8 @@ import { useOutletContext } from "react-router-dom";
 import NextRaceCard from "../components/cards/NextRaceCard.jsx";
 import LastRaceCard from "../components/cards/LastRaceCard.jsx";
 import UpcomingSchedule from "../components/cards/UpcomingSchedule.jsx";
-import DriverStandings from "../components/tables/DriverStandings.jsx";
-import ConstructorStandings from "../components/tables/ConstructorStandings.jsx";
+import DriverStandings from "../components/tables/DriversStandingsTable.jsx";
+import ConstructorStandings from "../components/tables/ConstructorStandingsTable.jsx";
 
 import { useState } from "react";
 
