@@ -1,5 +1,5 @@
 import { getPointsDifferential } from "../../utils/helper";
-import styles from "./Standings.module.css";
+import styles from "./StandingsTable.module.css";
 
 export default function ConstructorStandings({ constructors, isFiltered }) {
   console.log(constructors);
