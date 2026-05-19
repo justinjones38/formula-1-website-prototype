@@ -64,3 +64,5 @@ export function getDayOfWeek(date, time) {
   ];
   return dayOfWeek[dayIndex];
 }
+
+export const getPointsDifferential = (max, current) => parseInt(current) - parseInt(max)

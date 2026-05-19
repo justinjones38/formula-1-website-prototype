@@ -1,6 +1,9 @@
+import { getPointsDifferential } from "../../utils/helper";
 import styles from "./Standings.module.css";
 
 export default function ConstructorStandings({ constructors, isFiltered }) {
+  console.log(constructors);
+  const maxPoints = constructors[0].points;
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -13,14 +16,21 @@ export default function ConstructorStandings({ constructors, isFiltered }) {
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
-          {constructors.map((constructor) => (
+          {constructors.map((constructor, index) => (
             <tr
               className={styles.tableBodyRow}
               key={constructor.Constructor.constructorId}
             >
               <td className={styles.posCol}>{constructor.position}</td>
               <td className={styles.nameCol}>{constructor.Constructor.name}</td>
-              <td className={styles.pointsCol}>{constructor.points}</td>
+              <td className={styles.pointsCol}>
+                <p>{constructor.points}</p>
+                {index !== 0 ? (
+                  <p className={styles.pointsDiff}>
+                    ({getPointsDifferential(maxPoints, constructor.points)})
+                  </p>
+                ) : null}
+              </td>
               <td className={styles.winsCol}>{constructor.wins}</td>
             </tr>
           ))}
