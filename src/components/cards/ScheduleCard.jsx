@@ -13,26 +13,31 @@ export default function ScheduleCard({ event }) {
       <h3 className={styles.cardSessionTimesHeader}>Weekend Schedule</h3>
       <SessionCard
         title="Free Practice 1"
+        link="/fp1"
         info={event.FirstPractice}
         isPrimary={false}
       />
       <SessionCard
         title="Free Practice 2"
+        link="/fp2"
         info={event.SecondPractice}
         isPrimary={false}
       />
       <SessionCard
         title="Sprint Qualifying"
+        link="/sq"
         info={event.SprintQualifying}
         isPrimary={false}
       />
       <SessionCard
         title="Free Practice 3"
+        link="/fp3"
         info={event.ThirdPractice}
         isPrimary={false}
       />
       <SessionCard
         title="Sprint"
+        link="/sprint"
         info={event.Sprint}
         isPrimary={false}
         results={
@@ -41,6 +46,7 @@ export default function ScheduleCard({ event }) {
       />
       <SessionCard
         title="Qualifying"
+        link="/qualifying"
         info={event.Qualifying}
         isPrimary={true}
         results={
@@ -51,6 +57,7 @@ export default function ScheduleCard({ event }) {
       />
       <SessionCard
         title="Race"
+        link=""
         info={event}
         isPrimary={true}
         results={

@@ -4,11 +4,14 @@ import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
 import Standings from "./pages/Standings";
 import Drivers from "./pages/Drivers";
-import Race from "./pages/Race";
+import RaceLayout from "./components/layout/RaceLayout";
 import RaceEvent from "./pages/RaceEvent";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Results from "./pages/Results";
+import Qualifying from "./pages/Qualifying";
+import Race from "./pages/Race";
+import Sprint from "./pages/Sprint";
 
 export default function App() {
   return (
@@ -20,7 +23,11 @@ export default function App() {
           <Route path="results" element={<Results />} />
           <Route path="standings" element={<Standings />} />
           <Route path="drivers" element={<Drivers />} />
-          <Route path="results/:id" element={<Race />} />
+          <Route path="results/:id" element={<RaceLayout />}>
+            <Route index element={<Race />} />
+            <Route path="sprint" element={<Sprint />}/>
+            <Route path="qualifying" element={<Qualifying />}/>
+          </Route>
           <Route path="calendar/:id" element={<RaceEvent />} />
         </Route>
       </Routes>

@@ -1,10 +1,21 @@
 import useWindowWidth from "../../hooks/useWindowWidth";
-import styles from "./QualifyingResults.module.css";
+import styles from "./RaceTable.module.css";
 
-export default function QualifyingResults({ results }) {
+export default function RaceTable({ results }) {
+  console.log(results)
   const { windowWidth } = useWindowWidth();
-  console.log(results);
-
+  const maxLaps = results[0].laps
+  const getGap = (driver) => {
+    if (driver.status === "Finished") {
+      return driver.Time.time;
+    } else if (driver.status === "Lapped") {
+      return `+${maxLaps - driver.laps} Laps`;
+    } else if (driver.status === "Did not start") {
+      return "DNS";
+    } else {
+      return "DNF";
+    }
+  };
   return (
     <table className={styles.table}>
       <thead className={styles.tableHead}>
@@ -13,14 +24,10 @@ export default function QualifyingResults({ results }) {
             Pos
           </th>
           <th className={styles.driverCol}>Driver</th>
-          {windowWidth >= 450 ? (
-            <>
-              <th className={styles.gapCol}>Q1</th>
-              <th className={styles.gapCOl}>Q2</th>
-            </>
+          <th className={styles.gapCol}>Gap</th>
+          {windowWidth > 700 ? (
+            <th className={styles.pointsCol}>Points</th>
           ) : null}
-
-          <th className={styles.gapCOl}>Q3</th>
         </tr>
       </thead>
       <tbody className={styles.tableBody}>
@@ -33,14 +40,10 @@ export default function QualifyingResults({ results }) {
               </p>
               <p className={styles.teamInfo}>{driver.Constructor.name}</p>
             </td>
-            {windowWidth >= 450 ? (
-              <>
-                <td className={styles.gapCol}>{driver.Q1}</td>
-                <td className={styles.gapCol}>{driver.Q2}</td>
-              </>
+            <td className={styles.gapCol}>{getGap(driver)}</td>
+            {windowWidth > 700 ? (
+              <td className={styles.pointsCol}>{driver.points}</td>
             ) : null}
-
-            <td className={styles.gapCol}>{driver.Q3}</td>
           </tr>
         ))}
       </tbody>

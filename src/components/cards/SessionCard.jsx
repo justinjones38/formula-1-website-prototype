@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function SessionCard({
   info,
+  link,
   isPrimary,
   title,
   results = null,
@@ -28,7 +29,7 @@ export default function SessionCard({
           {convertTime(info.date, info.time)}
         </p>
         {results ? (
-          <Link className={styles.button} to={`/results/${results.circuitId}`}>
+          <Link className={styles.button} to={`/results/${results.circuitId}${link}`}>
             Results <FaLongArrowAltRight />
           </Link>
         ) : null}

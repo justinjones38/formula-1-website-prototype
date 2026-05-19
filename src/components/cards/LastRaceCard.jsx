@@ -1,6 +1,6 @@
 import useFetchResults from "../../hooks/useFetchResults";
 import LinkButton from "../buttons/LinkButton";
-import SessionResults from "../tables/SessionResults";
+import SessionResults from "../tables/RaceTable";
 import styles from "./SecondaryHeroCard.module.css";
 
 export default function LastRaceCard({ event }) {
