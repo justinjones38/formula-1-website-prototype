@@ -18,19 +18,27 @@ export default function StandingsLayout() {
       <div className={styles.buttonContainer}>
         <NavLink
           to="."
-          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
+          className={({ isActive }) =>
+            isActive
+              ? `${styles["navLink"]} ${styles["active"]}`
+              : `${styles["navLink"]}`
+          }
           end
         >
           Drivers
         </NavLink>
         <NavLink
-        to="constructors"
-        className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
+          to="constructors"
+          className={({ isActive }) =>
+            isActive
+              ? `${styles["navLink"]} ${styles["active"]}`
+              : `${styles["navLink"]}`
+          }
         >
           Constructors
         </NavLink>
       </div>
-      <Outlet context={{driverStandings, constructorStandings}} />
+      <Outlet context={{ driverStandings, constructorStandings }} />
     </div>
   );
 }

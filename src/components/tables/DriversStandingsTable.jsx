@@ -1,7 +1,7 @@
 import styles from "./StandingsTable.module.css";
 import { getPointsDifferential } from "../../utils/helper";
 
-export default function DriverStandings({ drivers}) {
+export default function DriverStandings({ drivers }) {
   const maxPoints = drivers[0].points;
   console.log(maxPoints);
   return (
