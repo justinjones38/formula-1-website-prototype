@@ -1,9 +1,11 @@
-import useWindowWidth from "../../hooks/useWindowWidth";
-import styles from "./QualifyingResults.module.css";
+import { useOutletContext } from "react-router-dom";
+import useWindowWidth from "../hooks/useWindowWidth";
+import styles from "./Qualifying.module.css";
 
-export default function QualifyingResults({ results }) {
+export default function Qualifying() {
   const { windowWidth } = useWindowWidth();
-  console.log(results);
+  const { resultsData } = useOutletContext();
+  const { qualifying } = resultsData;
 
   return (
     <table className={styles.table}>
@@ -24,7 +26,7 @@ export default function QualifyingResults({ results }) {
         </tr>
       </thead>
       <tbody className={styles.tableBody}>
-        {results.map((driver) => (
+        {qualifying.Races[0].QualifyingResults.map((driver) => (
           <tr key={driver.number} className={styles.tableBodyRow}>
             <td className={styles.posCol}>{driver.position}</td>
             <td className={styles.driverCol}>

@@ -1,5 +1,6 @@
 .cardContainer {
   display: flex;
+  justify-content: space-between;
   gap: 0.5em;
   border-bottom: var(--bottom-border);
   padding-bottom: 0.25em;
@@ -12,6 +13,11 @@
   padding-bottom: 0;
 }
 
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .cardDay {
   display: none;
 }
@@ -20,10 +26,16 @@
   margin-left: auto;
 }
 
-.cardDay::after,
-.cardDate::after {
-  display: inline;
-  content: " - ";
+.button {
+  font-size: 0.9rem;
+  align-self: flex-end;
+  transition: 0.3s color;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--button-nav-color);
+  cursor: pointer;
 }
 
 @media (min-width: 500px) {

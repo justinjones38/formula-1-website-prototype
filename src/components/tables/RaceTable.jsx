@@ -1,13 +1,15 @@
 import useWindowWidth from "../../hooks/useWindowWidth";
-import styles from "./SessionResults.module.css";
+import styles from "./RaceTable.module.css";
 
-export default function RaceResults({ results }) {
+export default function RaceTable({ results }) {
+  console.log(results);
   const { windowWidth } = useWindowWidth();
+  const maxLaps = results[0].laps;
   const getGap = (driver) => {
     if (driver.status === "Finished") {
       return driver.Time.time;
     } else if (driver.status === "Lapped") {
-      return `+${results[0].laps - driver.laps} Laps`;
+      return `+${maxLaps - driver.laps} Laps`;
     } else if (driver.status === "Did not start") {
       return "DNS";
     } else {

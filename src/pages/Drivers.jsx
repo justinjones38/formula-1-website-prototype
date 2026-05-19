@@ -24,12 +24,16 @@ export default function Drivers(props) {
       ...findDriverInfo,
     };
   });
+  console.log(driversInfo);
+  const sortedDrivers = driversInfo.toSorted(
+    (a, b) => a.permanentNumber - b.permanentNumber,
+  );
 
   return (
     <div className={styles.driverContainer}>
       <h1 className={styles.title}>Drivers - {drivers.season} Season</h1>
       <div className={styles.cards}>
-        {driversInfo.map((driver) => (
+        {sortedDrivers.map((driver) => (
           <div className={styles.driverCard} key={driver.permanentNumber}>
             <h3 className={styles.drivingNumber}>{driver.permanentNumber}</h3>
             <p className={styles.driver}>

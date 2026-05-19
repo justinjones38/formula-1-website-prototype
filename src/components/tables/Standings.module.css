@@ -28,6 +28,11 @@
 }
 
 /* Driver Standings Styling */
-.teamInfo {
+.teamInfo,
+.pointsDiff {
   color: var(--faded-text-color);
+}
+
+.pointsDiff {
+  font-size: 0.9rem;
 }

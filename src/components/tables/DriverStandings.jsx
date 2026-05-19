@@ -1,6 +1,9 @@
 import styles from "./Standings.module.css";
+import { getPointsDifferential } from "../../utils/helper";
 
 export default function DriverStandings({ drivers, isFiltered }) {
+  const maxPoints = drivers[0].points;
+  console.log(maxPoints);
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -13,7 +16,7 @@ export default function DriverStandings({ drivers, isFiltered }) {
           </tr>
         </thead>
         <tbody className={styles.tableBody}>
-          {drivers.map((driver) => (
+          {drivers.map((driver, index) => (
             <tr
               className={styles.tableBodyRow}
               key={driver.Driver.permanentNumber}
@@ -25,7 +28,14 @@ export default function DriverStandings({ drivers, isFiltered }) {
                 </p>
                 <p className={styles.teamInfo}>{driver.Constructors[0].name}</p>
               </td>
-              <td className={styles.pointsCol}>{driver.points}</td>
+              <td className={styles.pointsCol}>
+                <p className={styles.points}>{driver.points}</p>
+                {index !== 0 ? (
+                  <p className={styles.pointsDiff}>
+                    ({getPointsDifferential(maxPoints, driver.points)})
+                  </p>
+                ) : null}
+              </td>
               <td className={styles.winsCol}>{driver.wins}</td>
             </tr>
           ))}
