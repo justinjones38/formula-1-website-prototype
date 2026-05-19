@@ -78,6 +78,11 @@
   font-size: 0.9rem;
 }
 
+.progressInfo:focus, .progressInfo:hover {
+  border: 2px solid black;
+  text-decoration: underline;
+}
+
 .progressInfo.completed {
   background-color: var(--lime-green-bg-color);
   color: var(--dark-green-text-color);
