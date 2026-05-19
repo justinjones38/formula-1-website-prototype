@@ -23,7 +23,6 @@ export default function useFetch() {
             `https://api.jolpi.ca/ergast/f1/${year}/results/1/?format=json&limit=1000`,
           ),
         ]);
-        console.log("run");
 
         dataRes.forEach((res) => {
           if (!res.ok) {
@@ -35,7 +34,6 @@ export default function useFetch() {
           dataRes.map((res) => res.json()),
         );
 
-        console.log(fetchingData);
 
         //  Getting the values from the fetchingData Array
         const [
@@ -54,7 +52,6 @@ export default function useFetch() {
           results: results.MRData.RaceTable,
         });
       } catch (error) {
-        console.log(error);
         setError(true);
       } finally {
         setLoading(false);

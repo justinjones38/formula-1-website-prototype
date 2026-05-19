@@ -32,7 +32,6 @@ export default function useFetchResults(circuitId) {
           dataRes.map((res) => res.json()),
         );
 
-        console.log(fetchingData);
 
         //  Getting the values from the fetchingData Array
         const [race, sprint, qualifying] = fetchingData;
@@ -43,7 +42,6 @@ export default function useFetchResults(circuitId) {
           qualifying: qualifying.MRData.RaceTable,
         });
       } catch (error) {
-        console.log(error);
         setError(true);
       } finally {
         setLoading(false);

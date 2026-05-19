@@ -5,7 +5,6 @@ import useFetch from "../../hooks/useFetch";
 
 export default function Layout() {
   const { data } = useFetch();
-  console.log(data);
   return (
     <>
       <Navbar />

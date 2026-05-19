@@ -11,7 +11,6 @@ export default function LastRaceCard({ event }) {
   const podiumResults = resultsData.race.Races[0].Results.filter(
     (item, index) => index < 3,
   );
-  console.log(resultsData);
   return (
     <div className={styles.cardContainer}>
       <p className={styles.cardInfo}>Previous Race Result</p>
