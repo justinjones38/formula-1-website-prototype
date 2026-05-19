@@ -3,3 +3,18 @@
   gap: 1em;
   margin-bottom: 0.5em;
 }
+
+.navLink {
+  font-size: 1.1rem;
+  padding: 0.25em 1em;
+  transition: 0.3s color;
+}
+
+.navLink:hover, .navLink:focus {
+  color: var(--button-nav-color);
+}
+
+.active {
+  color: var(--button-nav-color);
+  border-bottom: 2px solid var(--button-nav-color);
+}

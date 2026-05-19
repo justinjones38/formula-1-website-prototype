@@ -26,6 +26,7 @@ export default function Race() {
         {resultsData.sprint.Races.length ? (
           <NavLink
           to="sprint"
+          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
           >
             Sprint
           </NavLink>
@@ -33,6 +34,7 @@ export default function Race() {
         {resultsData.qualifying.Races.length ? (
           <NavLink
           to="qualifying"
+          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
           >
             Qualifying
           </NavLink>
@@ -40,6 +42,8 @@ export default function Race() {
         {resultsData.race.Races.length ? (
           <NavLink
           to="."
+          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
+          end
           >
             Race
           </NavLink>
