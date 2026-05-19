@@ -19,37 +19,48 @@ export default function Race() {
     return;
   }
 
-
   return (
     <div className={styles.container}>
       <div className={styles.btnContainer}>
         {resultsData.sprint.Races.length ? (
           <NavLink
-          to="sprint"
-          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
+            to="sprint"
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["navLink"]} ${styles["active"]}`
+                : `${styles["navLink"]}`
+            }
           >
             Sprint
           </NavLink>
         ) : null}
         {resultsData.qualifying.Races.length ? (
           <NavLink
-          to="qualifying"
-          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
+            to="qualifying"
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["navLink"]} ${styles["active"]}`
+                : `${styles["navLink"]}`
+            }
           >
             Qualifying
           </NavLink>
         ) : null}
         {resultsData.race.Races.length ? (
           <NavLink
-          to="."
-          className={({isActive}) => isActive ? `${styles["navLink"]} ${styles["active"]}` : `${styles["navLink"]}`}
-          end
+            to="."
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["navLink"]} ${styles["active"]}`
+                : `${styles["navLink"]}`
+            }
+            end
           >
             Race
           </NavLink>
         ) : null}
       </div>
-      <Outlet context={{resultsData}} />
+      <Outlet context={{ resultsData }} />
     </div>
   );
 }

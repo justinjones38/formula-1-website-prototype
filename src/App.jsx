@@ -25,8 +25,8 @@ export default function App() {
           <Route path="drivers" element={<Drivers />} />
           <Route path="results/:id" element={<RaceLayout />}>
             <Route index element={<Race />} />
-            <Route path="sprint" element={<Sprint />}/>
-            <Route path="qualifying" element={<Qualifying />}/>
+            <Route path="sprint" element={<Sprint />} />
+            <Route path="qualifying" element={<Qualifying />} />
           </Route>
           <Route path="calendar/:id" element={<RaceEvent />} />
         </Route>

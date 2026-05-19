@@ -2,9 +2,9 @@ import useWindowWidth from "../../hooks/useWindowWidth";
 import styles from "./RaceTable.module.css";
 
 export default function RaceTable({ results }) {
-  console.log(results)
+  console.log(results);
   const { windowWidth } = useWindowWidth();
-  const maxLaps = results[0].laps
+  const maxLaps = results[0].laps;
   const getGap = (driver) => {
     if (driver.status === "Finished") {
       return driver.Time.time;

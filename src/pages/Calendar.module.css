@@ -78,7 +78,8 @@
   font-size: 0.9rem;
 }
 
-.progressInfo:focus, .progressInfo:hover {
+.progressInfo:focus,
+.progressInfo:hover {
   border: 2px solid black;
   text-decoration: underline;
 }

@@ -25,7 +25,9 @@ export default function Drivers(props) {
     };
   });
   console.log(driversInfo);
-  const sortedDrivers = driversInfo.toSorted((a, b) => a.permanentNumber - b.permanentNumber)
+  const sortedDrivers = driversInfo.toSorted(
+    (a, b) => a.permanentNumber - b.permanentNumber,
+  );
 
   return (
     <div className={styles.driverContainer}>

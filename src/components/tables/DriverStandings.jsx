@@ -30,7 +30,11 @@ export default function DriverStandings({ drivers, isFiltered }) {
               </td>
               <td className={styles.pointsCol}>
                 <p className={styles.points}>{driver.points}</p>
-                {index !== 0 ? <p className={styles.pointsDiff}>({getPointsDifferential(maxPoints, driver.points)})</p> : null}
+                {index !== 0 ? (
+                  <p className={styles.pointsDiff}>
+                    ({getPointsDifferential(maxPoints, driver.points)})
+                  </p>
+                ) : null}
               </td>
               <td className={styles.winsCol}>{driver.wins}</td>
             </tr>

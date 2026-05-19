@@ -4,8 +4,8 @@ import styles from "./Qualifying.module.css";
 
 export default function Qualifying() {
   const { windowWidth } = useWindowWidth();
-  const {resultsData} = useOutletContext();
-  const {qualifying} = resultsData;
+  const { resultsData } = useOutletContext();
+  const { qualifying } = resultsData;
 
   return (
     <table className={styles.table}>

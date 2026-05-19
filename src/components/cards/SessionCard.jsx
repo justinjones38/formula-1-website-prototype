@@ -29,7 +29,10 @@ export default function SessionCard({
           {convertTime(info.date, info.time)}
         </p>
         {results ? (
-          <Link className={styles.button} to={`/results/${results.circuitId}${link}`}>
+          <Link
+            className={styles.button}
+            to={`/results/${results.circuitId}${link}`}
+          >
             Results <FaLongArrowAltRight />
           </Link>
         ) : null}

@@ -10,7 +10,8 @@
   transition: 0.3s color;
 }
 
-.navLink:hover, .navLink:focus {
+.navLink:hover,
+.navLink:focus {
   color: var(--button-nav-color);
 }
 

@@ -32,7 +32,8 @@
   transition: 0.3s color;
 }
 
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   color: var(--button-nav-color);
   cursor: pointer;
 }

@@ -34,7 +34,6 @@ export default function useFetch() {
           dataRes.map((res) => res.json()),
         );
 
-
         //  Getting the values from the fetchingData Array
         const [
           calendar,

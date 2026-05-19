@@ -32,7 +32,6 @@ export default function useFetchResults(circuitId) {
           dataRes.map((res) => res.json()),
         );
 
-
         //  Getting the values from the fetchingData Array
         const [race, sprint, qualifying] = fetchingData;
 
