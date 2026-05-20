@@ -7,12 +7,12 @@ A custom-built F1 website coded with React. It keeps track of the calendar, driv
 
 --- 
 ## Table of Contents
-[Installation](#installation)
-[Usage](#usage)
-[Features](#features)
-[GIFs](#gifs)
-[Conclusion](#conclusion)
-[References](#references)
+[Installation](#installation)  
+[Usage](#usage)  
+[Features](#features)  
+[GIFs](#gifs)  
+[Conclusion](#conclusion)  
+[References](#references)  
 
 ---
 ## Installation
