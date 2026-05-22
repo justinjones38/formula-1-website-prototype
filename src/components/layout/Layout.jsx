@@ -5,12 +5,14 @@ import useFetch from "../../hooks/useFetch";
 
 export default function Layout() {
   const { data } = useFetch();
+  if(!data) {
+    return;
+  }
   return (
     <>
       <Navbar />
       <div className={styles.layoutContainer}>
         <Outlet context={{ data }} />
-      </div>
-    </>
+      </div>    </>
   );
 }

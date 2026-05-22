@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useFetchResults(circuitId) {
-  const [resultsData, setResultsData] = useState({});
+  const [resultsData, setResultsData] = useState(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const date = new Date();

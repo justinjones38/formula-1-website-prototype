@@ -62,6 +62,8 @@ npm run dev
 Future additions to this website include: 
 - [ ] A countdown clock to the race on each race event page.
 - [ ] Improve various styling issues on this website.
+- [ ] Added loading pages for each section
+- [ ] Improve fetching process data
 - [ ] Add a footer.
 - [ ] Correct scrolling bug when going between links.
 - [ ] Fix netlify error when refreshing page.

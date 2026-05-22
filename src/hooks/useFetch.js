@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useFetch() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const date = new Date();
