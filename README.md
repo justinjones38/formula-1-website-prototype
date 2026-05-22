@@ -56,6 +56,8 @@ npm run dev
 ## GIFs
 ![Video Demo](src/assets/f1-prototype-website.gif)
 
+---
+
 ## Conclusion 
 Future additions to this website include: 
 - [ ] A countdown clock to the race on each race event page.
