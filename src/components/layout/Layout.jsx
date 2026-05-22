@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 export default function Layout() {
   const { data } = useFetch();
-  if(!data) {
+  if (!data) {
     return;
   }
   return (
@@ -13,6 +13,7 @@ export default function Layout() {
       <Navbar />
       <div className={styles.layoutContainer}>
         <Outlet context={{ data }} />
-      </div>    </>
+      </div>
+    </>
   );
 }
