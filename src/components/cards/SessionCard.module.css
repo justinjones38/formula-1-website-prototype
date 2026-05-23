@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+svg {
+  position: relative;
+  top: 3px
+}
 @media (min-width: 500px) {
   .cardDay {
     display: block;
