@@ -4,7 +4,6 @@ import styles from "./Drivers.module.css";
 export default function Drivers(props) {
   const { data } = useOutletContext();
 
-
   const { drivers, driverStandings } = data;
   console.log(drivers);
   const filteredDrivers = drivers.Drivers.filter(

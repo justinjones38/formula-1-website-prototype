@@ -6,7 +6,6 @@ export default function RaceCalendar() {
   const { id } = useParams();
   const { data } = useOutletContext();
 
-
   const { calendar } = data;
 
   const event = calendar.Races.find((event) => event.Circuit.circuitId === id);

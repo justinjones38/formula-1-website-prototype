@@ -14,13 +14,12 @@ export default function Race() {
 
   const { resultsData, loading, error } = useFetchResults(id);
 
-  if(loading) {
-    return <h2>Loading ...</h2>
+  if (loading) {
+    return <h2>Loading ...</h2>;
   }
-  if(error) {
-    return <h2>404: Cannot fetch data</h2>
+  if (error) {
+    return <h2>404: Cannot fetch data</h2>;
   }
-
 
   return (
     <div className={styles.container}>
