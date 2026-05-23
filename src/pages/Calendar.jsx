@@ -4,9 +4,7 @@ import { useOutletContext, Link } from "react-router-dom";
 
 export default function Calendar() {
   const { data } = useOutletContext();
-  if (!data || Object.keys(data).length === 0) {
-    return;
-  }
+
   const { calendar, results } = data;
   const lastRound = results.Races.length + 1;
   const mappedCalendar = calendar.Races.map((event) => {

@@ -1,6 +1,6 @@
 import useFetchResults from "../../hooks/useFetchResults";
 import LinkButton from "../buttons/LinkButton";
-import SessionResults from "../tables/RaceTable";
+import RaceTable from "../tables/RaceTable";
 import styles from "./SecondaryHeroCard.module.css";
 
 export default function LastRaceCard({ event }) {
@@ -17,7 +17,7 @@ export default function LastRaceCard({ event }) {
       <h4 className={styles.cardTitle}>
         {event.raceName} - Round {event.round}
       </h4>
-      <SessionResults results={podiumResults} />
+      <RaceTable results={podiumResults} />
       <div className={styles.btnContainer}>
         <LinkButton size="md" to={`results/${event.Circuit.circuitId}`}>
           Full Race Results

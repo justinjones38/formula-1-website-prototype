@@ -6,6 +6,7 @@ export default function Race() {
   const { resultsData } = useOutletContext();
   return (
     <div>
+      
       <RaceTable results={resultsData.race.Races[0].Results} />
     </div>
   );

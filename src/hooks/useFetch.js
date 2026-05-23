@@ -20,7 +20,7 @@ export default function useFetch() {
           ),
           fetch(`https://api.jolpi.ca/ergast/f1/${year}/drivers/?format=json`),
           fetch(
-            `https://api.jolpi.ca/ergast/f1/${year}/results/1/?format=json&limit=1000`,
+            `https://api.jolpi.ca/ergast/f1/${year}/results/1/?format=json`,
           ),
         ]);
 
@@ -59,5 +59,5 @@ export default function useFetch() {
 
     fetchData();
   }, []);
-  return { data, error };
+  return { data, loading, error };
 }

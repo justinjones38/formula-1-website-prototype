@@ -66,7 +66,7 @@ Future additions to this website include:
 - [ ] Improve fetching process data
 - [ ] Add a footer.
 - [ ] Correct scrolling bug when going between links.
-- [ ] Fix netlify error when refreshing page.
+- [X] Fix netlify error when refreshing page.
 
 ---
 

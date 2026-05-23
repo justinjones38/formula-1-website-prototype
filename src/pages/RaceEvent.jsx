@@ -5,10 +5,7 @@ import styles from "./RaceEvent.module.css";
 export default function RaceCalendar() {
   const { id } = useParams();
   const { data } = useOutletContext();
-  // Temporary check to prevent error.
-  if (!data || Object.keys(data).length === 0) {
-    return;
-  }
+
 
   const { calendar } = data;
 

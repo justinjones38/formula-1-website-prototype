@@ -6,9 +6,7 @@ import LinkButton from "../components/buttons/LinkButton";
 export default function Results() {
   const { data } = useOutletContext();
   const { windowWidth } = useWindowWidth();
-  if (!data || Object.keys(data).length === 0) {
-    return;
-  }
+
   const { results } = data;
 
   return (
