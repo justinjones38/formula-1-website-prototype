@@ -15,7 +15,6 @@ export default function Home() {
   const { data } = useOutletContext();
   const { calendar, driverStandings, constructorStandings, results } = data;
 
-
   // Get current round of schedule by checking how many races have results for them
   const eventRoundCompleted = results.Races.length;
 

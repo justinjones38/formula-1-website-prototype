@@ -3,13 +3,15 @@ import styles from "./Schedule.module.css";
 import SessionCard from "./SessionCard";
 
 export default function ScheduleCard({ event }) {
-  const { resultsData, loading, error } = useFetchResults(event.Circuit.circuitId);
-  if(loading) {
-    return <h2>Loading ...</h2>
+  const { resultsData, loading, error } = useFetchResults(
+    event.Circuit.circuitId,
+  );
+  if (loading) {
+    return <h2>Loading ...</h2>;
   }
 
-  if(error) {
-    return <h2>404: Data cannot be fetched</h2>
+  if (error) {
+    return <h2>404: Data cannot be fetched</h2>;
   }
 
   console.log(resultsData);
