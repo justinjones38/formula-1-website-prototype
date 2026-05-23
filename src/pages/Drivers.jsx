@@ -3,9 +3,7 @@ import styles from "./Drivers.module.css";
 
 export default function Drivers(props) {
   const { data } = useOutletContext();
-  if (!data || Object.keys(data).length === 0) {
-    return;
-  }
+
 
   const { drivers, driverStandings } = data;
   console.log(drivers);
