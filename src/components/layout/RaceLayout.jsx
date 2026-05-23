@@ -12,15 +12,23 @@ export default function Race() {
   const { data } = useOutletContext();
   const { results } = data;
 
-  const { resultsData } = useFetchResults(id);
+  const { resultsData, loading, error } = useFetchResults(id);
 
-  // Temporary check to prevent error.
-  if (!resultsData || Object.keys(resultsData).length === 0) {
-    return;
+  if(loading) {
+    return <h2>Loading ...</h2>
   }
+  if(error) {
+    return <h2>404: Cannot fetch data</h2>
+  }
+
 
   return (
     <div className={styles.container}>
+      <h2 className={styles.title}>
+        Round {resultsData.race.Races[0].round} -{" "}
+        {resultsData.race.Races[0].raceName}
+      </h2>
+
       <div className={styles.btnContainer}>
         {resultsData.sprint.Races.length ? (
           <NavLink

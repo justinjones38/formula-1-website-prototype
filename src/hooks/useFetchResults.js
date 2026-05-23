@@ -49,5 +49,5 @@ export default function useFetchResults(circuitId) {
 
     fetchData(circuitId);
   }, []);
-  return { resultsData, error };
+  return { resultsData, loading, error };
 }
