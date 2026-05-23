@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Results from "./pages/Results";
 import Qualifying from "./pages/Qualifying";
-import Race from "./pages/Race";
+import RaceResults from "./pages/RaceResults";
 import Sprint from "./pages/Sprint";
 import DriversStandings from "./pages/DriversStandings";
 import ConstructorsStandings from "./pages/ConstructorsStandings";
@@ -29,7 +29,7 @@ export default function App() {
           </Route>
           <Route path="drivers" element={<Drivers />} />
           <Route path="results/:id" element={<RaceLayout />}>
-            <Route index element={<Race />} />
+            <Route index element={<RaceResults />} />
             <Route path="sprint" element={<Sprint />} />
             <Route path="qualifying" element={<Qualifying />} />
           </Route>
