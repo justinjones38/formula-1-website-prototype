@@ -7,7 +7,6 @@ export default function Sprint() {
   console.log(resultsData.sprint.Races[0].SprintResults);
   return (
     <div>
-      <h1>Sprint</h1>
       <RaceTable results={resultsData.sprint.Races[0].SprintResults} />
     </div>
   );
