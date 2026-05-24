@@ -21,12 +21,14 @@ export default function Race() {
     return <h2>404: Cannot fetch data</h2>;
   }
 
+  console.log(resultsData.race)
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>
+      {/* <h2 className={styles.title}>
         Round {resultsData.race.Races[0].round} -{" "}
         {resultsData.race.Races[0].raceName}
-      </h2>
+      </h2> */}
 
       <div className={styles.btnContainer}>
         {resultsData.sprint.Races.length ? (
