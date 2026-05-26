@@ -22,7 +22,7 @@ export default function ConstructorStandings({ constructors, isFiltered }) {
               key={constructor.Constructor.constructorId}
             >
               <td className={styles.posCol}>{constructor.position}</td>
-              <td className={styles.nameCol}>{constructor.Constructor.name}</td>
+              <td className={`${styles.nameCol} ${styles.constructorName}`}>{constructor.Constructor.name}</td>
               <td className={styles.pointsCol}>
                 <p>{constructor.points}</p>
                 {index !== 0 ? (
