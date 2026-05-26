@@ -27,6 +27,11 @@
   vertical-align: top;
 }
 
+.constructorName {
+  vertical-align: text-top;
+}
+
+
 /* Driver Standings Styling */
 .teamInfo,
 .pointsDiff {
