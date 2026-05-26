@@ -8,6 +8,7 @@ export default function Results() {
   const { windowWidth } = useWindowWidth();
 
   const { results } = data;
+  
 
   return (
     <div className={styles.container}>
