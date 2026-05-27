@@ -9,9 +9,9 @@ export default function useFetchWinners() {
 
   useEffect(() => {
     console.log("run");
+    setLoading(true);
     const fetchData = async () => {
       try {
-        setLoading(true);
         const res = await fetch(
           `https://api.jolpi.ca/ergast/f1/${year}/results/1/?format=json`,
         );

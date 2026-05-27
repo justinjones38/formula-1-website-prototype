@@ -2,13 +2,26 @@ import { useOutletContext, Link } from "react-router-dom";
 import styles from "./Results.module.css";
 import useWindowWidth from "../hooks/useWindowWidth";
 import LinkButton from "../components/buttons/LinkButton";
+import useFetchWinners from "../hooks/useFetchWinners";
 
 export default function Results() {
   const { data } = useOutletContext();
   const { windowWidth } = useWindowWidth();
+  const {results} = data;
+  console.log(results);
+ 
+  const {winners, loading, error} = useFetchWinners();
 
-  const { results } = data;
-  
+  if(loading) {
+    return <h2>Loading...</h2>
+  }
+  if(error) {
+    return <h2>Cannot fetch data</h2>
+  }
+  if(!winners) {
+    return;
+  } 
+
 
   return (
     <div className={styles.container}>
@@ -26,7 +39,7 @@ export default function Results() {
           </tr>
         </thead>
         <tbody>
-          {results.Races.map((race) => (
+          {winners.map((race) => (
             <tr className={styles.raceRow} key={race.round}>
               <td className={styles.round}>{race.round}</td>
               <td className={styles.race}>{race.raceName}</td>
