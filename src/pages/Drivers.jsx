@@ -1,12 +1,22 @@
 import { useOutletContext } from "react-router-dom";
 import styles from "./Drivers.module.css";
+import useFetchDrivers from "../hooks/useFetchDrivers";
 
 export default function Drivers(props) {
   const { data } = useOutletContext();
-
-  const { drivers, driverStandings } = data;
+  const {drivers, loading, error} = useFetchDrivers()
+  if(loading) {
+    return <h2>Loading</h2>
+  }
+  if (error) {
+    return <h2>Cannot fetch data</h2>
+  }
+  if(!drivers) {
+    return;
+  }
+  const { driverStandings } = data;
   console.log(drivers);
-  const filteredDrivers = drivers.Drivers.filter(
+  const filteredDrivers = drivers.filter(
     (driver) => driver.permanentNumber,
   );
 
