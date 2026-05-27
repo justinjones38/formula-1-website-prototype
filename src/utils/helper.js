@@ -67,3 +67,5 @@ export function getDayOfWeek(date, time) {
 
 export const getPointsDifferential = (max, current) =>
   parseInt(current) - parseInt(max);
+
+export const getThisYear = () =>  new Date().getFullYear();

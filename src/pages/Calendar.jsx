@@ -1,21 +1,31 @@
+import useFetchWinners from "../hooks/useFetchWinners";
 import { convertDate } from "../utils/helper";
 import styles from "./Calendar.module.css";
 import { useOutletContext, Link } from "react-router-dom";
 
 export default function Calendar() {
   const { data } = useOutletContext();
+  const { calendar } = data;
 
-  const { calendar, results } = data;
-  const lastRound = results.Races.length + 1;
+  const {winners, loading, error} = useFetchWinners();
+  console.log(winners, loading);
+  if(!winners) {
+    return;
+  }
+  if(error) {
+    return;
+  }
+
+  const lastRound = winners.length;
   const mappedCalendar = calendar.Races.map((event) => {
-    if (parseInt(event.round) < lastRound) {
+    if (parseInt(event.round) <= lastRound) {
       return {
         ...event,
         completed: true,
         progress: "Completed",
         styling: "completed",
       };
-    } else if (parseInt(event.round) === lastRound) {
+    } else if (parseInt(event.round) === (lastRound + 1)) {
       return {
         ...event,
         completed: false,
@@ -53,8 +63,8 @@ export default function Calendar() {
                 </p>
               ) : (
                 <p className={styles.driverInfo}>
-                  {results.Races[index].Results[0].Driver.givenName}{" "}
-                  {results.Races[index].Results[0].Driver.familyName}
+                  {winners[index].Results[0].Driver.givenName}{" "}
+                  {winners[index].Results[0].Driver.familyName}
                 </p>
               )}
             </div>
