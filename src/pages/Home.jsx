@@ -14,18 +14,14 @@ export default function Home() {
 
   const { data } = useOutletContext();
   const { calendar, driverStandings, constructorStandings, results } = data;
+  console.log(results)
 
   // Get current round of schedule by checking how many races have results for them
-  const eventRoundCompleted = results.Races.length;
+  const eventRoundCompleted = parseInt(results.round);
 
   // Finding the next event, if no event, then section skipped
   const findNextEvent = calendar.Races.find(
     (event) => parseInt(event.round) === eventRoundCompleted + 1,
-  );
-
-  // Find the last event completed, if season has started, then it is skipped
-  const findLastEventCompleted = results.Races.find(
-    (event) => parseInt(event.round) === eventRoundCompleted,
   );
 
   // Get upcoming schedule for calendar
@@ -57,8 +53,8 @@ export default function Home() {
       {findNextEvent ? <NextRaceCard event={findNextEvent} /> : null}
 
       <div className={styles.homeSecondaryCards}>
-        {findLastEventCompleted ? (
-          <LastRaceCard event={findLastEventCompleted} />
+        {results.Races ? (
+          <LastRaceCard event={results.Races[0]} />
         ) : null}
 
         {upcomingSchedule && upcomingSchedule.length !== 0 ? (

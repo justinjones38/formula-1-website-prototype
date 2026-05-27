@@ -14,7 +14,6 @@ export default function ScheduleCard({ event }) {
     return <h2>404: Data cannot be fetched</h2>;
   }
 
-  console.log(resultsData);
   return (
     <div className={styles.cardSessionTimes}>
       <h3 className={styles.cardSessionTimesHeader}>Weekend Schedule</h3>
