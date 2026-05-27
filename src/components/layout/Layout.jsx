@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 export default function Layout() {
   const { data, loading, error } = useFetch();
+  console.log(data);
   if (loading) {
     return (
       <>

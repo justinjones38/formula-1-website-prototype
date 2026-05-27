@@ -10,7 +10,6 @@ export default function SessionCard({
   title,
   results = null,
 }) {
-  console.log(results);
   if (!info || Object.keys(info).length === 0) {
     return;
   }
