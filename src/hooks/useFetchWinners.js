@@ -8,9 +8,10 @@ export default function useFetchWinners() {
   const year = getThisYear();
 
   useEffect(() => {
+    console.log("run");
     const fetchData = async () => {
-      setLoading(true);
       try {
+        setLoading(true);
         const res = await fetch(
           `https://api.jolpi.ca/ergast/f1/${year}/results/1/?format=json`,
         );
@@ -18,6 +19,7 @@ export default function useFetchWinners() {
           throw new Error();
         }
         const data = await res.json();
+        setWinners(data.MRData.RaceTable.Races);
       } catch (err) {
         setError(true);
       } finally {
