@@ -4,11 +4,7 @@ import RaceTable from "../tables/RaceTable";
 import styles from "./SecondaryHeroCard.module.css";
 
 export default function LastRaceCard({ event }) {
-  const { resultsData } = useFetchResults(event.Circuit.circuitId);
-  if (!resultsData || Object.keys(resultsData).length === 0) {
-    return;
-  }
-  const podiumResults = resultsData.race.Races[0].Results.filter(
+  const podiumResults = event.Results.filter(
     (item, index) => index < 3,
   );
   return (
