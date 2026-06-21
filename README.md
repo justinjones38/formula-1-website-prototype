@@ -3,6 +3,7 @@
 ## Project Description
 A custom-built F1 website coded with React. It keeps track of the calendar, driver standings and constructor standings. It provides results for each sprint, qualifying, and race session. It is designed to be easy-to-use and allow users to gather results from Formula 1. The data is fetched with [jolpi.ca](https://api.jolpi.ca/ergast/) API
 
+## Live Demo
 [View the Website Demo](https://personalformulaone.netlify.app/)
 
 --- 
