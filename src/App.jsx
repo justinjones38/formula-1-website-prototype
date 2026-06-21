@@ -14,10 +14,12 @@ import RaceResults from "./pages/RaceResults";
 import Sprint from "./pages/Sprint";
 import DriversStandings from "./pages/DriversStandings";
 import ConstructorsStandings from "./pages/ConstructorsStandings";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
