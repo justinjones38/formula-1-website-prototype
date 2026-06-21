@@ -66,7 +66,7 @@ Future additions to this website include:
 - [ ] Added loading pages for each section
 - [ ] Improve fetching process data
 - [ ] Add a footer.
-- [ ] Correct scrolling bug when going between links.
+- [X] Correct scrolling bug when going between links.
 - [ ] Implement Dark mode
 - [X] Fix netlify error when refreshing page.
 
